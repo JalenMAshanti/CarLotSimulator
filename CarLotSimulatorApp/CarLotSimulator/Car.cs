@@ -16,8 +16,9 @@ namespace CarLotSimulator
         public bool IsDriveable { get; set; }
 
         public Car() 
-        { 
-        
+        {
+
+            CarLot.numberOfCars++;
         
         
         }

@@ -6,7 +6,7 @@ namespace CarLotSimulator
     {
         static void Main(string[] args)
         {
-            CarLot lot = new CarLot();
+           
             //TODO
 
             //Create a seperate class file called Car
@@ -17,7 +17,8 @@ namespace CarLotSimulator
             // version one
             Car car1 = new Car(2000, "Cadillac", "XT4", "rum rum rum", "Beep", false);
 
-            lot.Cars.Add(car1);
+            Console.WriteLine(CarLot.numberOfCars);
+            CarLot.Cars.Add(car1);
 
             // version two 
             Car car2 = new Car();
@@ -29,9 +30,10 @@ namespace CarLotSimulator
             car2.HonkNoise = "Im the worst brand of car";
             car2.IsDriveable = false;
 
-            lot.Cars.Add(car2);
+            Console.WriteLine(CarLot.numberOfCars);
+            CarLot.Cars.Add(car2);
 
-
+            // version three
             Car car3 = new Car()
             {
                 Year = 2055,
@@ -41,14 +43,15 @@ namespace CarLotSimulator
                 HonkNoise = "meep meep",
                 IsDriveable = true
             };
-
-            lot.Cars.Add(car3);
+            
+            Console.WriteLine(CarLot.numberOfCars);
+            CarLot.Cars.Add(car3);
 
             //Now that the Car class is created we can instanciate 3 new cars
             //Set the properties for each of the cars
             //Call each of the methods for each car
 
-            Console.WriteLine("Car 1 noises----------------");
+            Console.WriteLine("\nCar 1 noises----------------");
             car1.MakeEngineNoise();
             car1.MakeHonkNoise();
 
@@ -76,7 +79,7 @@ namespace CarLotSimulator
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
 
-            foreach (var car in lot.Cars) 
+            foreach (var car in CarLot.Cars) 
             {
                 Console.WriteLine("");
                 Console.WriteLine(car.Year);
